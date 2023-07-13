@@ -6,8 +6,8 @@ body {
     font-family:'Montserrat', Arial, Helvetica, sans-serif;
     font-size: .9em;
     color: #000000;
-}
 
+}
 h1,
 h2,
 h3,
@@ -18,7 +18,7 @@ h4 {
 }
 
 h1 {
-    font-size: 1.9em;
+    font-size: 1.875em;
 
 }
 
@@ -33,15 +33,14 @@ h3 {
 }
 
 h4 {
-    font-size: .9em;
+    font-size: .75em;
 
 }
 
 p {
     line-height: 36px;
-
+    font-size: 1rem;
 }
-
 .content-wrapper {
     max-width: 1200px;
     width: 90%;
@@ -49,17 +48,18 @@ p {
     justify-content: center;
     flex-flow: row wrap;
 }
+
+/******** HEADER STYLES ********/
 header {
     display: flex;
     justify-content: center;
     text-align: center;
 }
-
-/******** HEADER STYLES ********/
 header h1 {
+    margin: 0;
     width: 100%;
-    padding:36px 0;
-
+    padding:38px 0 20px 0;
+    border-bottom: 3px solid #77a466;
 }
 
 header h1 span {
@@ -69,26 +69,23 @@ header h1 span {
 }
 
 header nav {
-   
-    width: 100%;
-    
-    padding: 44px 0;
-
+   padding: 20px 0;
 }
 
 header nav ul {
     padding: 0;
-    
-    text-align: right;
+    margin: 0;
+    list-style: none;
 
 }
 
 header nav ul li {
     
-    font: size .9em; 
-    font-weight:bold ;
-    text-transform:uppercase ;
-    padding: 0 10px;
+    font: size .875rem; 
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 0;
+    width: 100%;
 
 }
 
@@ -100,11 +97,9 @@ header nav ul li a {
 
 /********  MAIN STYLES ********/
 /******** TOP SECTION ********/
-.top-section .content-wrapper{
-    display: flex;
-    justify-content: center;
-}
+
 .main-image img {
+    width: 100%;
     border-top:3px solid #77a466 ;
     border-bottom:3px solid #77a466 ;
 
@@ -112,40 +107,38 @@ header nav ul li a {
 
 .main-title h2 {
     color: #45610e;
-    padding: 25px 0;
+    padding: 5px 0;
 
 }
 
 /******** BOTTOM SECTION ********/
-.bottom-section .content-wrapper {
-    border-top: 5px solid #eee;
-    border-bottom: 5px solid #eee;
+.top-section,
+.bottom-section  {
     display: flex;
     justify-content: center;
 }
-
+.bottom-section .content-wrapper {
+    border-top: 5px solid #eee;
+    border-bottom: 5px solid #eee;
+}
 .section-one,
 .section-two,
 .section-three {
-   width: 100%;
     box-sizing: border-box;
-    
-    padding: 0 40px;
-
 }
 
 .section-one {
-    width: 350px;
+    width: 100%;
 }
 
 .section-two {
-    width: 500px;
+    width: 100%;
     border-right:5px solid #eee ;
     border-left:5px solid #eee;
 }
 
 .section-three {
-    width: 350px;
+    width: 100%;
 
 }
 
@@ -163,19 +156,65 @@ header nav ul li a {
 .menu-list li {
     color:#45610E ;
     line-height: 36px;
-
+    font-size: 1rem;
 }
 
 /******** FOOTER STYLES ********/
 footer {
-    text-align: center;
     margin-top: 8px;
     display: flex;
     justify-content: center;
-
 }
 
 footer span {
     font-family:"Galada",cursive;
-
+    text-transform: lowercase;
+    color: #45610e;
+    font-size: .875rem;
+}
+/******** Tablet Media Query ********/
+@media all and (min-width: 768px) {
+    /******** Bottom Section ********/
+    .bottom-section .content-wrapper {
+        justify-content: space-evenly;
+    }
+    .section-one {
+        width: 26%;
+    }
+    .section-two {
+        width: 40%;
+        border-left: 5px solid #eee;
+        border-right: 5px solid #eee;
+        border-top: none;
+        border-bottom: none;
+        padding: 0 30px;
+    }
+    .section-three {
+        width: 26%;
+    }
+}
+/******** Desktop Media Query ********/
+@media all and (min-width: 1200px) {
+    /******** Global Styles ********/
+    body {
+        font-size: 1em;
+    }
+    header .content-wrapper {
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
+    header h1 {
+        width: 30%;
+        padding: 0;
+        border-bottom: none;
+        text-align: left;
+    }
+    header nav {
+        width: 21%;
+    }
+    header nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
 }
